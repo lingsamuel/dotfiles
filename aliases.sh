@@ -88,13 +88,14 @@ alias nat='sudo iptables -t nat'
 
 setproxy() {
     local baseURL=${1:-'127.0.0.1'}
-    local _HTTP_PROXY="http://$baseURL:1081"
+    export HTTP_PROXY="http://$baseURL:1081"
     export SOCKS_PROXY="socks5://$baseURL:1080"
     export socks_proxy=$SOCKS_PROXY
-    export HTTP_PROXY=$http_proxy
-    export http_proxy=$_HTTP_PROXY
-    export HTTPS_PROXY=$http_proxy
-    export https_proxy=$http_proxy
+
+    export http_proxy=$HTTP_PROXY
+    export HTTPS_PROXY=$HTTP_PROXY
+    export https_proxy=$HTTP_PROXY
+
     export ALL_PROXY=$SOCKS_PROXY
     export all_proxy=$SOCKS_PROXY
 }
@@ -181,6 +182,12 @@ alias dkr=dr
 ## =====
 ## Git
 ## =====
+
+gitdiff(){
+    local HASH=${1:-HEAD}
+    local NUMS=${2:-1}
+    git diff ${HASH}~${NUMS} ${HASH}
+}
 
 alias fixup="git commit -a --amend --no-edit -s"
 
