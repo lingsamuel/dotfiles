@@ -396,3 +396,5 @@ export GOOS="linux"
 export GOARCH="amd64"
 #alias gosetup="go list -m -json -mod=mod all; go mod tidy"
 alias gosetup="go list -m -json -mod=mod all; go mod download"
+
+alias gcm="git checkout master || git checkout main"
