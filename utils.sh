@@ -5,6 +5,9 @@ iface() {
 }
 
 hostip() {
+    if [[  -v GLOBAL_PROXY_ADDR ]]; then
+        echo "$GLOBAL_PROXY_ADDR"
+    fi
     TARGET=${1:-$(iface)}
     ip -o -4 addr list "$TARGET" | awk '{print $4}' | cut -d/ -f1
 }
