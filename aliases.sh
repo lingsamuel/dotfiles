@@ -381,7 +381,7 @@ alias hupdate='helm repo update'
 alias hls='helm search repo --devel'
 
 # kubectl aliases
-source $HOME/Projects/kubectl-life-saver/generator.sh
+source $HOME/kubectl-life-saver/generator.sh
 
 ## =====
 ## Golang
