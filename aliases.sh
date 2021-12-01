@@ -398,3 +398,15 @@ export GOARCH="amd64"
 alias gosetup="go list -m -json -mod=mod all; go mod download"
 
 alias gcm="git checkout master || git checkout main"
+
+
+d64() {
+ local str="$1"
+ echo "$1" | base64 -d
+}
+
+b64() {
+ local str="$1"
+ echo "$1" | base64
+}
+

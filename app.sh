@@ -114,7 +114,7 @@ alias lr="tmux split-window -h"
 co() {
     for dir in $(ls -d */); do
         echo "$dir:"
-        loc $dir
+        loc $dir $@
         echo "\n\n"
     done
 }
