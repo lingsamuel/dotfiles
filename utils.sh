@@ -28,6 +28,6 @@ alias mc=mkcdir
 
 curl_geoip() {
     echo "Curling https://api.ip.sb/geoip/${1}"
-    curl --noproxy "*" "https://api.ip.sb/geoip/${1}"
+    curl --noproxy "*" "https://api.ip.sb/geoip/${1}" -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/115.0'
 }
 alias geoip=curl_geoip
